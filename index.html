@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="allValidation(event)">
+        <input type="text" class="userName" placeholder="enter your name" oninput="checkName()"><span
+            class="userSp" style="color:red;"></span><br><br>
+        <input type="text" class="useremail" placeholder="enter your email" oninput="checkEmail()">
+        <span class="emailSp" style="color:red;"></span><br><br>
+        <input type="password" class="userPass" placeholder="enter your password" oninput="checkPassword()" required>
+        <span class="passSp" style="color:red;"></span><br> <Span class="passBtn" onclick="toggleBtn() "
+            style="border:1px solid black; cursor:pointer ;">show
+        </span>
+        <br>
+        <label for="male">Male</label>
+        <input type="radio" value="mal" name="gend" id="male" oninput="checkRadio()" required><br><br>
+        <label for="female">Female</label>
+        <input type="radio" name="gend" id="female" value="femal" oninput="checkRadio()" required> <Span
+            class="radioSp"></Span><br>
+        <input type="radio" name="gend" id="fe" value="none" oninput="checkRadio()" style="visibility:hidden;"><br>
+        <select name="" id="cities">
+            <option value="first" selected>Select a city</option>
+            <option value="ka">Karachi</option>
+            <option value="la">Lahore</option>
+            <option value="is">IslamAbad</option>
+            <option value="fa">Faisalabaad</option>
+        </select>
+        <br>
+        <span class="citiesSp"></span>
+        <br>
+        <input type="submit">
+    </form>
+
+    <script src="app.js"></script>
+</body>
