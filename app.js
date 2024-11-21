@@ -1,3 +1,35 @@
+var data = [ 
+    {
+    username : "Ali",
+    email : "emfg7i4@gmail.com",
+    password : "fgywif",
+    gender : "fbue",
+    city : "nebyue",
+},
+{
+    username : "Talha",
+    email : "emfg7i4@gmail.com",
+    password : "fgywif",
+    gender : "fbue",
+    city : "nebyue",
+},
+{
+    username : "mehmood",
+    email : "emfg7i4@gmail.com",
+    password : "fgywif",
+    gender : "fbue",
+    city : "nebyue",
+},
+{
+    username : "Ahmad",
+    email : "emfg7i4@gmail.com",
+    password : "fgywif",
+    gender : "fbue",
+    city : "nebyue",
+},
+
+ ];
+ console.log(" data :",data);
 var checkCondition = false;
 var userName = document.getElementsByClassName("userName")[0];
 var useremail = document.getElementsByClassName("useremail")[0];
@@ -40,7 +72,7 @@ function checkEmail() {
         
     }
     
-    console.log("emailboolean",emailBoolean);
+    // console.log("emailboolean",emailBoolean);
 }
 function checkPassword() {
     var userPass = document.getElementsByClassName("userPass")[0];
@@ -73,17 +105,17 @@ function toggleBtn() {
 
 }
 var radioBoolean = false;
-var i = 0;
+var i ;
 function checkRadio() {
     var radios = document.getElementsByName("gend");
     // var radioSp = document.getElementsByClassName("radioSp")[0];
     // console.log(radios);
-    for ( i = 0; i < radios.length; i++) {
+    for ( i = 0 ; i < radios.length; i++) {
         if (radios[i].checked) {
            radioBoolean = true;
             // radios[i].unchecked;
-            console.log("radio value", radios[i].value);
-            console.log( "radioboolean",radioBoolean);
+            // console.log("radio value", radios[i].value);
+            // console.log( "radioboolean",radioBoolean);
             return;
 
         }
@@ -100,66 +132,33 @@ function allValidation(e) {
         return;
         
     }
-    console.log(cities.value);
+    // console.log(cities.value);
 
-    console.log("ist",checkCondition);
+    // console.log("ist",checkCondition);
     if (userName.value.length >= 3 && userPass.value.length >= 5 && emailBoolean == true && radioBoolean == true) {
         checkCondition = true;
 
     }
-    console.log("2nd",checkCondition);
+    // console.log("2nd",checkCondition);
     if (!checkCondition) return;
     
-    var array = [ 
-        {
-        username : "Ali",
-        email : "emfg7i4@gmail.com",
-        password : "fgywif",
-        gender : "fbue",
-        city : "nebyue",
-    },
-    {
-        username : "Talha",
-        email : "emfg7i4@gmail.com",
-        password : "fgywif",
-        gender : "fbue",
-        city : "nebyue",
-    },
-    {
-        username : "mehmood",
-        email : "emfg7i4@gmail.com",
-        password : "fgywif",
-        gender : "fbue",
-        city : "nebyue",
-    },
-    {
-        username : "Ahmad",
-        email : "emfg7i4@gmail.com",
-        password : "fgywif",
-        gender : "fbue",
-        city : "nebyue",
-    },
-    
-     ];
 
-    for(let i =0 ; i < array.length; i++){
-        if(array[i].username === userName.value){
+    for(let i =0 ; i < data.length; i++){
+        if(data[i].username === userName.value){
             alert("User Name Already exist");
             return;
 
         }
     }
-
-   array.push(new UserData(userName.value , useremail.value , userPass.value , radios.value , cities.value));
-    console.log(array);
-    
-    // for ( var i=0; i < 4 ; i++){
-    //     break;
-    // }
-    
-    userName.value = "";
-    useremail.value = "";
-    userPass.value = "";
-    cities.value = "first";
-    // radios[i].value = "none" ;
-}
+    // data = [...data ,];
+  data.push(new UserData(userName.value , useremail.value , userPass.value , radios.value , cities.value));
+  console.log("updated data :",data);
+        
+        userName.value = "";
+        useremail.value = "";
+        userPass.value = "";
+        cities.value = "first";
+        // radios[i].checked = false;
+        
+        
+    }
