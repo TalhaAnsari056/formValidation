@@ -5,7 +5,7 @@ var userPass = document.getElementsByClassName("userPass")[0];
 var radios = document.getElementsByName("gender");
 
 function UserData(a, b, c, d, e) {
-    this.name = a;
+    this.username = a;
     this.email = b;
     this.password = c;
     this.gender = d;
@@ -110,8 +110,47 @@ function allValidation(e) {
     console.log("2nd",checkCondition);
     if (!checkCondition) return;
     
-    var array = [];
-    array.push(new UserData(userName.value , useremail.value , userPass.value , radios.value , cities.value));
+    var array = [ 
+        {
+        username : "Ali",
+        email : "emfg7i4@gmail.com",
+        password : "fgywif",
+        gender : "fbue",
+        city : "nebyue",
+    },
+    {
+        username : "Talha",
+        email : "emfg7i4@gmail.com",
+        password : "fgywif",
+        gender : "fbue",
+        city : "nebyue",
+    },
+    {
+        username : "mehmood",
+        email : "emfg7i4@gmail.com",
+        password : "fgywif",
+        gender : "fbue",
+        city : "nebyue",
+    },
+    {
+        username : "Ahmad",
+        email : "emfg7i4@gmail.com",
+        password : "fgywif",
+        gender : "fbue",
+        city : "nebyue",
+    },
+    
+     ];
+
+    for(let i =0 ; i < array.length; i++){
+        if(array[i].username === userName.value){
+            alert("User Name Already exist");
+            return;
+
+        }
+    }
+
+   array.push(new UserData(userName.value , useremail.value , userPass.value , radios.value , cities.value));
     console.log(array);
     
     // for ( var i=0; i < 4 ; i++){
